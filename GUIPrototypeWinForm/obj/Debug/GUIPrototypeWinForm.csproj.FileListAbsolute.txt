@@ -1,0 +1,10 @@
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\bin\Debug\GUIPrototypeWinForm.exe.config
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\bin\Debug\GUIPrototypeWinForm.exe
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\bin\Debug\GUIPrototypeWinForm.pdb
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.csprojAssemblyReference.cache
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.Form1.resources
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.Properties.Resources.resources
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.csproj.GenerateResource.cache
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.csproj.CoreCompileInputs.cache
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.exe
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.pdb
