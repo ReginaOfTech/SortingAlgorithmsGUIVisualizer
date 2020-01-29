@@ -12,7 +12,6 @@ namespace GUIPrototypeWinForm
 {
     public partial class Form1 : Form
     {
-        //https://www.youtube.com/watch?v=n5zUCyLe9ks
         int[] arrayToSort;
         Graphics gObj;
 

@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# SortingVisualizer
+=======
 # SortingAlgorithmsVisualizer
 
 A simple graphical user interface (GUI) that demonstrates the sorting algorithms: Merge, Heap, Bubble, and Quick. 
@@ -13,3 +16,4 @@ Future Updates:
 - When window size is changed, graphic image moves with it
 
 This will be updated as each update is finished and when there is a code break down on reginaoftech.com
+>>>>>>> e6dda0f22ca91e4dca9518194000c7d2e5023f4d
