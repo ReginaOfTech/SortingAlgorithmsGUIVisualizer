@@ -21,47 +21,52 @@ namespace GUIPrototypeWinForm
 
         public void Sort(int[] arr, Graphics g_, int maxVal_, int brushWidth_, int[] posArr_)
         {
+            //Setting all local variables to passed variables
             arrToSort = arr;
             g = g_;
             maxVal = maxVal_;
             brushWidth = brushWidth_;
             posArr = posArr_;
 
+            //loop that performs bubble sort
             while(!isSorted)
             {
-                int curXPos = 0;
-
                 for (int i =0; i < arrToSort.Length - 1; i++)
                 {                   
                     if (arrToSort[i] > arrToSort[i+1])
                     {
-                        Swap(i, i+1, curXPos);
+                        Swap(i, i+1);
                     }
                     else
                     {
+                        //resets the color so that as it iterates through purple
+                        //columns are not let behind
                         g.FillRectangle(whiteBrush, posArr[i], maxVal - arrToSort[i], brushWidth, maxVal);
                     }
-                        
+                    //Thread sleeps for .01 of a second
+                    //Slows it down enough to watch but not bore
                     Thread.Sleep(1);
-                    isSorted = IsSorted();
-                    
-                }
-                
+                    //check to see if the array is sorted
+                    isSorted = IsSorted();                    
+                }               
             }
         }
 
-        private void Swap(int curIndex, int prevIndex, int curXPos_)
+        private void Swap(int curIndex, int prevIndex)
         {
+            //Actual swap
             int temp = arrToSort[curIndex];
             arrToSort[curIndex] = arrToSort[curIndex + 1];
             arrToSort[curIndex + 1] = temp;
 
+            //resetting of colors as the array is iterated through
             g.FillRectangle(blackBrush, posArr[curIndex], 0, 1, maxVal);
             g.FillRectangle(blackBrush, posArr[prevIndex], 0, 1, maxVal);
 
             g.FillRectangle(whiteBrush, posArr[curIndex], maxVal - arrToSort[curIndex], brushWidth, maxVal);
             g.FillRectangle(purpleBrush, posArr[prevIndex], maxVal - arrToSort[prevIndex], brushWidth, maxVal);
             
+            //prevents the two graphic lines below from going beyond the scope of the array.
             if(curIndex != 0)
             {
                 g.FillRectangle(blackBrush, posArr[curIndex - 1], 0, 1, maxVal);
