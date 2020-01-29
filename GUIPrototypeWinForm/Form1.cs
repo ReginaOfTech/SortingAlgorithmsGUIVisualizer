@@ -13,7 +13,9 @@ namespace GUIPrototypeWinForm
     public partial class Form1 : Form
     {
         int[] arrayToSort;
+        int[] posOfCols;
         Graphics gObj;
+        int brushWidth = 1;
 
         public Form1()
         {         
@@ -41,8 +43,9 @@ namespace GUIPrototypeWinForm
                 switch (comboBox1.SelectedItem.ToString())
                 {
                     case "Bubble Sort":
+                        Console.WriteLine("Sorting");
                         Interface1 bubbleCall = new BubbleSort();
-                        bubbleCall.Sort(arrayToSort, gObj, panel1.Height);
+                        bubbleCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                         break;
                     default:
                         MessageBox.Show("That Algorithm Has Not Been Created. Please Select Another.");
@@ -65,19 +68,26 @@ namespace GUIPrototypeWinForm
         {
             //When window is changed, have array visual expand/decrease with it
             gObj = panel1.CreateGraphics();
-            int numEntries = panel1.Width;
+            int panelWidth = panel1.Width;
             int maxVal = panel1.Height;
-            arrayToSort = new int[numEntries];
-            gObj.FillRectangle(new SolidBrush(Color.Black), 0, 0, numEntries, maxVal);
+            arrayToSort = new int[panelWidth/brushWidth]; 
+            gObj.FillRectangle(new SolidBrush(Color.Black), 0, 0, panelWidth, maxVal);
+
             var rand = new Random();
             for (int i = 0; i < arrayToSort.Length; i++)
             {
                 arrayToSort[i] = rand.Next(5, maxVal);
                 Console.WriteLine(arrayToSort[i].ToString());
             }
+
+            posOfCols = new int[arrayToSort.Length];
+            int prevXPos = 0;
             for (int i = 0; i < arrayToSort.Length; i++)
-            {
-                gObj.FillRectangle(new SolidBrush(Color.White), i, maxVal - arrayToSort[i], 1, maxVal);
+            {                
+                gObj.FillRectangle(new SolidBrush(Color.White), prevXPos, maxVal - arrayToSort[i], brushWidth, maxVal);
+                posOfCols[i] = prevXPos;
+                Console.WriteLine(posOfCols[i].ToString());
+                prevXPos += brushWidth;
             }
         }
 

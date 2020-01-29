@@ -9,6 +9,6 @@ namespace GUIPrototypeWinForm
 {
     interface Interface1
     {
-        void Sort(int[] arr, Graphics g, int maxVal);
+        void Sort(int[] arr, Graphics g, int maxVal, int brushWidth, int[] posArr);
     }
 }
