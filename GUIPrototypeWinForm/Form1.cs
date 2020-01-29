@@ -51,11 +51,16 @@ namespace GUIPrototypeWinForm
                 {
                     //A new case for each sort.
                     case "Bubble Sort":
-                        Console.WriteLine("Sorting");
+                        Console.WriteLine("Sorting by bubble");
                         //A parent class will be used so that the children can inherit from it.
                         Interface1 bubbleCall = new BubbleSort();
                         bubbleCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                         break;
+                    //case "Quick Sort":
+                    //    Console.WriteLine("Sorting by quick");
+                    //    Interface1 quickCall = new QuickSort();
+                    //    quickCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
+                    //    break;
                     //Default will catch for the sorts in the list, but not implemented.
                     default:
                         MessageBox.Show("That Algorithm Has Not Been Created. Please Select Another.");

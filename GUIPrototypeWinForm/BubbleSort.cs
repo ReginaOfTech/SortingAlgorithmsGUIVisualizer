@@ -7,6 +7,8 @@ using System.Threading;
 
 namespace GUIPrototypeWinForm
 {
+    //O(n^2) = as the array gets larger, its efficiency decreases
+    //least efficient and not commonly used
     class BubbleSort : Interface1
     {
         private bool isSorted = false;
