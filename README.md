@@ -11,3 +11,5 @@ Future Updates:
 - Perform the sorting an another thread so the user can interact with the window as the sorting is performed
 - Change the color of the active column for easier user visual
 - When window size is changed, graphic image moves with it
+
+This will be updated as each update is finished and when there is a code break down on reginaoftech.com
