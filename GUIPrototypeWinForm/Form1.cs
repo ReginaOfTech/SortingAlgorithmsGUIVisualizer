@@ -88,8 +88,11 @@ namespace GUIPrototypeWinForm
             //panel's boundaries and crashing the program.
             int panelWidth = panel1.Width;
             int maxVal = panel1.Height;
+            //Adding 10 allows for 0 to be used and set to 10
+            int numOfEntries = trackBar1.Value * 10 + 10;
+            brushWidth = panelWidth / numOfEntries;
             //TODO: Implement number of column selection
-            arrayToSort = new int[panelWidth/brushWidth]; 
+            arrayToSort = new int[numOfEntries]; //panelWideth/brushWidth
             gObj.FillRectangle(new SolidBrush(Color.Black), 0, 0, panelWidth, maxVal);
 
             //Filling arrayToSort with random numbers that do not exceed panel height
@@ -118,6 +121,13 @@ namespace GUIPrototypeWinForm
             Console.WriteLine(e.ToString());
             Console.WriteLine(sender.ToString());
             Console.WriteLine(comboBox1.SelectedItem.ToString());
+        }
+
+        //
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            Console.WriteLine(trackBar1.Value.ToString());
+            CreateAndDisplayArray();
         }
     }
 }
