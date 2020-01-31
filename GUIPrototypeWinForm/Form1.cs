@@ -56,11 +56,11 @@ namespace GUIPrototypeWinForm
                         Interface1 bubbleCall = new BubbleSort();
                         bubbleCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                         break;
-                    //case "Quick Sort":
-                    //    Console.WriteLine("Sorting by quick");
-                    //    Interface1 quickCall = new QuickSort();
-                    //    quickCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
-                    //    break;
+                    case "Quick Sort":
+                        Console.WriteLine("Sorting by quick");
+                        Interface1 quickCall = new QuickSort();
+                        quickCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
+                        break;
                     //Default will catch for the sorts in the list, but not implemented.
                     default:
                         MessageBox.Show("That Algorithm Has Not Been Created. Please Select Another.");
@@ -90,16 +90,20 @@ namespace GUIPrototypeWinForm
             int maxVal = panel1.Height;
             //Adding 10 allows for 0 to be used and set to 10
             int numOfEntries = trackBar1.Value * 10 + 10;
-            brushWidth = panelWidth / numOfEntries;
-            //TODO: Implement number of column selection
+
+            //Finding number of pixels needed between each columns
+            //for separation
+            int pixelsForSpace = numOfEntries * 2;
+            brushWidth = (panelWidth - pixelsForSpace) / numOfEntries;
+
             arrayToSort = new int[numOfEntries]; //panelWideth/brushWidth
             gObj.FillRectangle(new SolidBrush(Color.Black), 0, 0, panelWidth, maxVal);
 
             //Filling arrayToSort with random numbers that do not exceed panel height
             var rand = new Random();
             for (int i = 0; i < arrayToSort.Length; i++)
-            {
-                arrayToSort[i] = rand.Next(5, maxVal);
+            {               
+                arrayToSort[i] = rand.Next(20, maxVal);                
                 Console.WriteLine(arrayToSort[i].ToString());
             }
 
@@ -110,8 +114,8 @@ namespace GUIPrototypeWinForm
             {                
                 gObj.FillRectangle(new SolidBrush(Color.White), prevXPos, maxVal - arrayToSort[i], brushWidth, maxVal);
                 posOfCols[i] = prevXPos;
-                Console.WriteLine(posOfCols[i].ToString());
-                prevXPos += brushWidth;
+                Console.WriteLine("Pos: " + posOfCols[i].ToString());
+                prevXPos += brushWidth + 2;
             }
         }
 
@@ -123,7 +127,7 @@ namespace GUIPrototypeWinForm
             Console.WriteLine(comboBox1.SelectedItem.ToString());
         }
 
-        //
+        //Event handler for the scroll bar.
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             Console.WriteLine(trackBar1.Value.ToString());
