@@ -46,48 +46,66 @@ namespace GUIPrototypeWinForm
             //check to make sure that a sort is selected. If not a pop up message is presented. 
             if(comboBox1.SelectedItem != null)
             {
-                //Checking the drop down box for desired sorting algorithm
-                switch (comboBox1.SelectedItem.ToString())
+                if(newArray)
                 {
-                    //A new case for each sort.
-                    case "Bubble Sort":
-                        Console.WriteLine("Sorting by bubble");
-                        ComplexityLabel.Text = "Complexity: O(n ^ 2)";
-                        //A parent class will be used so that the children can inherit from it.
-                        Interface1 bubbleCall = new BubbleSort();
-                        bubbleCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
-                        break;
-                    case "Quick Sort":
-                        Console.WriteLine("Sorting by quick");
-                        ComplexityLabel.Text = "Complexity: O(n^2)";
-                        Interface1 quickCall = new QuickSort();
-                        quickCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
-                        break;
-                    case "Merge Sort":
-                        Console.WriteLine("Sorting by merge");
-                        ComplexityLabel.Text = "Complexity: O(nLogn)";
-                        Interface1 mergeCall = new MergeSort();
-                        mergeCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
-                        break;
-                    //Default will catch for the sorts in the list, but not implemented.
-                    default:
-                        MessageBox.Show("That Algorithm Has Not Been Created. Please Select Another.");
-                        break;
+                    //Checking the drop down box for desired sorting algorithm
+                    switch (comboBox1.SelectedItem.ToString())
+                    {
+                        //A new case for each sort.
+                        case "Bubble Sort":
+                            Console.WriteLine("Sorting by bubble");
+                            newArray = false;
+                            ComplexityLabel.Text = "Complexity: O(n ^ 2)";
+                            //A parent class will be used so that the children can inherit from it.
+                            Interface1 bubbleCall = new BubbleSort();
+                            bubbleCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
+                            break;
+                        case "Quick Sort":
+                            Console.WriteLine("Sorting by quick");
+                            newArray = false;
+                            ComplexityLabel.Text = "Complexity: O(n^2)";
+                            Interface1 quickCall = new QuickSort();
+                            quickCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
+                            break;
+                        case "Merge Sort":
+                            Console.WriteLine("Sorting by merge");
+                            newArray = false;
+                            ComplexityLabel.Text = "Complexity: O(nLogn)";
+                            Interface1 mergeCall = new MergeSort();
+                            mergeCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
+                            break;
+                        //Default will catch for the sorts in the list, but not implemented.
+                        default:
+                            MessageBox m = new MessageBox("That Algorithm Has Not Been Created. Please Select Another.");
+                            m.Show();
+                            //MessageBox.Show("That Algorithm Has Not Been Created. Please Select Another.");
+                            break;
+                    }
                 }
+                else
+                {
+                    MessageBox m = new MessageBox("Please Create A New Array By Selecting A New Array Size.");
+                    m.Show();
+                    //MessageBox.Show("Please Create A New Array By Selecting A New Array Size.");
+                }
+                
             }
             else
             {
-                MessageBox.Show("Please Select A Sorting Algorithm.");
+                MessageBox m = new MessageBox("Please Select A Sorting Algorithm.");
+                m.Show();
+                //MessageBox.Show("Please Select A Sorting Algorithm.");
             }
             
         }
 
         //event handler for when the 'create array' button is clicked
-        private void CreateArrayButton_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
-            CreateAndDisplayArray();
+            Application.Exit();
         }
 
+        bool newArray = false;
         private void CreateAndDisplayArray()
         {
             //TODO: When window is changed, have array visual expand/decrease with it
@@ -125,6 +143,7 @@ namespace GUIPrototypeWinForm
                 Console.WriteLine("Pos: " + posOfCols[i].ToString());
                 prevXPos += brushWidth + 2;
             }
+            newArray = true;
         }
 
         //Event handler for when the combo box is changed. Debugging purposes.

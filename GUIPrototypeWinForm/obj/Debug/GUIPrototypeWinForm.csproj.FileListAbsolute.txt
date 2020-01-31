@@ -8,3 +8,4 @@ C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debu
 C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.csproj.CoreCompileInputs.cache
 C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.exe
 C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.pdb
+C:\Users\AdminUser\source\repos\GUIPrototypeWinForm\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.MessageBox.resources
