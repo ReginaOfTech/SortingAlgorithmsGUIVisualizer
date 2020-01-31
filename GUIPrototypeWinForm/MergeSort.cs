@@ -22,6 +22,7 @@ namespace GUIPrototypeWinForm
         Brush blackBrush = new SolidBrush(Color.Black);
         Brush blueBrush = new SolidBrush(Color.DodgerBlue);
         Brush redBrush = new SolidBrush(Color.Red);
+        int threadSleepTime = 100;
 
         public void Sort(int[] arr, Graphics g_, int maxVal_, int brushWidth_, int[] posArr_)
         {
@@ -59,35 +60,19 @@ namespace GUIPrototypeWinForm
 
         int[] merge(int[] arr, int low, int midPoint, int high)
         {
-            int i, j, k;
-            int sizeL = midPoint - low + 1;
-            int sizeR = high - midPoint;
-
             /* create temp arrays */
-            int[] L = new int[sizeL];
-            int[] R = new int[sizeR];
+            int[] L = new int[midPoint - low + 1];
+            int[] R = new int[high - midPoint];
 
-            /* Copy data to temp arrays L[] and R[] */
-            for (i = 0; i < sizeL; i++)
-            {
-                L[i] = arr[low + i];
-                //g.FillRectangle(blackBrush, posArr[low + i], 0, brushWidth, maxVal);
-                //g.FillRectangle(whiteBrush, posArr[low + i], maxVal - arr[low + i], brushWidth, maxVal);
-            }
-
-            for (j = 0; j < sizeR; j++)
-            {
-                R[j] = arr[midPoint + 1 + j];
-                //g.FillRectangle(blackBrush, posArr[midPoint + j], 0, brushWidth, maxVal);
-                //g.FillRectangle(whiteBrush, posArr[midPoint + j], maxVal - arr[midPoint + j], brushWidth, maxVal);
-            }
-
-
+            //Copy arr over to new arrays
+            Array.Copy(arr, low, L, 0, midPoint - low + 1);
+            Array.Copy(arr, midPoint + 1, R, 0, high - midPoint);
+            
             /* Merge the temp arrays back into arr[low..high]*/
-            i = 0; // Initial index of first subarray 
-            j = 0; // Initial index of second subarray 
-            k = low; // Initial index of merged subarray 
-            while (i < sizeL && j < sizeR)
+            int i = 0; // Initial index of first subarray 
+            int j = 0; // Initial index of second subarray 
+            int k = low; // Initial index of merged subarray 
+            while (i < L.Length && j < R.Length)
             {
                 if (L[i] <= R[j])
                 {
@@ -100,35 +85,38 @@ namespace GUIPrototypeWinForm
                     arr[k] = R[j];
                     j++;
                 }
-                Thread.Sleep(100);
+                
                 g.FillRectangle(blackBrush, posArr[k], 0, brushWidth, maxVal);
                 g.FillRectangle(whiteBrush, posArr[k], maxVal - arr[k], brushWidth, maxVal);
                 k++;
                 g.FillRectangle(blackBrush, posArr[k], 0, brushWidth, maxVal);
                 g.FillRectangle(whiteBrush, posArr[k], maxVal - arr[k], brushWidth, maxVal);
+                Thread.Sleep(threadSleepTime);
             }
 
             /* Copy the remaining elements of L[], if there 
                are any */
-            while (i < sizeL)
+            while (i < L.Length)
             {
                 arr[k] = L[i];
                 g.FillRectangle(blackBrush, posArr[k], 0, brushWidth, maxVal);
                 g.FillRectangle(whiteBrush, posArr[k], maxVal - arr[k], brushWidth, maxVal);
                 i++;
                 k++;
+                Thread.Sleep(threadSleepTime);
             }
 
                 /* Copy the remaining elements of R[], if there 
                    are any */
-             while (j < sizeR)
+             while (j < R.Length)
              {
                 arr[k] = R[j];
                 g.FillRectangle(blackBrush, posArr[k], 0, brushWidth, maxVal);
                 g.FillRectangle(whiteBrush, posArr[k], maxVal - arr[k], brushWidth, maxVal);
                 j++;
                 k++;
-             }
+                Thread.Sleep(threadSleepTime);
+            }
             
             return arr;
         }
