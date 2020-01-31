@@ -7,9 +7,8 @@ To use: When you have ran the code a window will pop up. In the menu at the top,
 To start a new sort, hit the 'Create Array' button and reselect another algorithm and then hit 'Start'
 
 Future Updates:
-- Implement Merge, Heap, and Quick sort
+- Implement Merge and Heap sort
 - Perform the sorting an another thread so the user can interact with the window as the sorting is performed
-- Change the color of the active column for easier user visual
 - When window size is changed, graphic image moves with it
 - UI update
 
