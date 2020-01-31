@@ -33,12 +33,15 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ComplexityLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // CreateArrayButton
             // 
-            this.CreateArrayButton.Location = new System.Drawing.Point(13, 12);
+            this.CreateArrayButton.Location = new System.Drawing.Point(82, 63);
             this.CreateArrayButton.Name = "CreateArrayButton";
             this.CreateArrayButton.Size = new System.Drawing.Size(112, 27);
             this.CreateArrayButton.TabIndex = 0;
@@ -48,7 +51,7 @@
             // 
             // StartSortButton
             // 
-            this.StartSortButton.Location = new System.Drawing.Point(82, 124);
+            this.StartSortButton.Location = new System.Drawing.Point(82, 145);
             this.StartSortButton.Name = "StartSortButton";
             this.StartSortButton.Size = new System.Drawing.Size(112, 27);
             this.StartSortButton.TabIndex = 2;
@@ -64,7 +67,7 @@
             "Quick Sort",
             "Heap Sort",
             "Merge Sort"});
-            this.comboBox1.Location = new System.Drawing.Point(4, 97);
+            this.comboBox1.Location = new System.Drawing.Point(4, 118);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 3;
@@ -84,17 +87,47 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(4, 46);
+            this.trackBar1.Location = new System.Drawing.Point(4, 12);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(190, 45);
             this.trackBar1.TabIndex = 10;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(38, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Algorithm Information";
+            // 
+            // ComplexityLabel
+            // 
+            this.ComplexityLabel.AutoSize = true;
+            this.ComplexityLabel.Location = new System.Drawing.Point(13, 234);
+            this.ComplexityLabel.Name = "ComplexityLabel";
+            this.ComplexityLabel.Size = new System.Drawing.Size(75, 13);
+            this.ComplexityLabel.TabIndex = 12;
+            this.ComplexityLabel.Text = "ComplexityInfo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "--------------------------------------------------";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ComplexityLabel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.comboBox1);
@@ -116,6 +149,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label ComplexityLabel;
+        private System.Windows.Forms.Label label2;
     }
 }
 

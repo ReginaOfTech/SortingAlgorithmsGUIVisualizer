@@ -52,17 +52,20 @@ namespace GUIPrototypeWinForm
                     //A new case for each sort.
                     case "Bubble Sort":
                         Console.WriteLine("Sorting by bubble");
+                        ComplexityLabel.Text = "Complexity: O(n ^ 2)";
                         //A parent class will be used so that the children can inherit from it.
                         Interface1 bubbleCall = new BubbleSort();
                         bubbleCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                         break;
                     case "Quick Sort":
                         Console.WriteLine("Sorting by quick");
+                        ComplexityLabel.Text = "Complexity: O(n^2)";
                         Interface1 quickCall = new QuickSort();
                         quickCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                         break;
                     case "Merge Sort":
                         Console.WriteLine("Sorting by merge");
+                        ComplexityLabel.Text = "Complexity: O(nLogn)";
                         Interface1 mergeCall = new MergeSort();
                         mergeCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                         break;
