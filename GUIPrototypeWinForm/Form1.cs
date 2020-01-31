@@ -61,6 +61,11 @@ namespace GUIPrototypeWinForm
                         Interface1 quickCall = new QuickSort();
                         quickCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                         break;
+                    case "Merge Sort":
+                        Console.WriteLine("Sorting by merge");
+                        Interface1 mergeCall = new MergeSort();
+                        mergeCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
+                        break;
                     //Default will catch for the sorts in the list, but not implemented.
                     default:
                         MessageBox.Show("That Algorithm Has Not Been Created. Please Select Another.");
