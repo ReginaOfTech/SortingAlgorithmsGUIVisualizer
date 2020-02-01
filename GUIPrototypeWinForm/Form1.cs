@@ -74,6 +74,13 @@ namespace GUIPrototypeWinForm
                             Interface1 mergeCall = new MergeSort();
                             mergeCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                             break;
+                        //case "Heap Sort":
+                        //    Console.WriteLine("Sorting by heap.");
+                        //    newArray = false;
+                        //    ComplexityLabel.Text = ("Get Complexity");
+                        //    Interface1 heapCall = new HeapSort();
+                        //    heapCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
+                        //    break;
                         //Default will catch for the sorts in the list, but not implemented.
                         default:
                             MessageBox m = new MessageBox("That Algorithm Has Not Been Created. Please Select Another.");

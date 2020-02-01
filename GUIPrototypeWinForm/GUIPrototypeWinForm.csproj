@@ -53,6 +53,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeapSort.cs" />
     <Compile Include="Interface1.cs" />
     <Compile Include="MergeSort.cs" />
     <Compile Include="MessageBox.cs">
