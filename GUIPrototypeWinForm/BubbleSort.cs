@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Threading;
 
 namespace GUIPrototypeWinForm
@@ -11,7 +7,6 @@ namespace GUIPrototypeWinForm
     //least efficient and not commonly used
     class BubbleSort : Interface1
     {
-        private bool isSorted = false;
         private int[] arrToSort;
         private Graphics g;
         private int maxVal;
@@ -58,9 +53,7 @@ namespace GUIPrototypeWinForm
 
                         //Thread sleeps for .03 of a second
                         //Slows it down enough to watch but not bore
-                        Thread.Sleep(threadSleepTime);
-                
-                        //check to see if the array is sorted                       
+                        Thread.Sleep(threadSleepTime);                    
                     }
                     g.FillRectangle(blackBrush, posArr[i], 0, brushWidth, maxVal);
                     g.FillRectangle(whiteBrush, posArr[i], maxVal - arrToSort[i], brushWidth, maxVal);
@@ -74,20 +67,6 @@ namespace GUIPrototypeWinForm
             int temp = arrToSort[curIndex];
             arrToSort[curIndex] = arrToSort[nextIndex];
             arrToSort[nextIndex] = temp;
-
-            ////resetting of colors as the array is iterated through
-            //g.FillRectangle(blackBrush, posArr[curIndex], 0, 1, maxVal);
-            //g.FillRectangle(blackBrush, posArr[nextIndex], 0, 1, maxVal);
-
-            //g.FillRectangle(whiteBrush, posArr[curIndex], maxVal - arrToSort[curIndex], brushWidth, maxVal);
-            //g.FillRectangle(purpleBrush, posArr[nextIndex], maxVal - arrToSort[nextIndex], brushWidth, maxVal);
-            
-            ////prevents the two graphic lines below from going beyond the scope of the array.
-            //if(curIndex != 0)
-            //{
-            //    g.FillRectangle(blackBrush, posArr[curIndex - 1], 0, 1, maxVal);
-            //    g.FillRectangle(whiteBrush, posArr[curIndex - 1], maxVal - arrToSort[curIndex - 1], brushWidth, maxVal);
-            //}
         }
 
         private bool IsSorted()
