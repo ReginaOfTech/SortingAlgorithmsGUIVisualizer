@@ -63,7 +63,7 @@ namespace GUIPrototypeWinForm
                         case "Quick Sort":
                             Console.WriteLine("Sorting by quick");
                             newArray = false;
-                            ComplexityLabel.Text = "Complexity: O(n^2)";
+                            ComplexityLabel.Text = "Complexity: O(n*logn)";
                             Interface1 quickCall = new QuickSort();
                             quickCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                             break;
@@ -77,7 +77,7 @@ namespace GUIPrototypeWinForm
                         case "Heap Sort":
                             Console.WriteLine("Sorting by heap.");
                             newArray = false;
-                            ComplexityLabel.Text = ("Get Complexity");
+                            ComplexityLabel.Text = ("Complexity: O(nLogn)");
                             Interface1 heapCall = new HeapSort();
                             heapCall.Sort(arrayToSort, gObj, panel1.Height, brushWidth, posOfCols);
                             break;
