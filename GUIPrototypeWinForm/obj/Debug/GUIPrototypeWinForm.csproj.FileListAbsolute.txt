@@ -19,3 +19,14 @@ C:\Users\flobo\Desktop\CodingProjects\SortingVisual\GUIPrototypeWinForm\obj\Debu
 C:\Users\flobo\Desktop\CodingProjects\SortingVisual\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.csproj.GenerateResource.cache
 C:\Users\flobo\Desktop\CodingProjects\SortingVisual\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.exe
 C:\Users\flobo\Desktop\CodingProjects\SortingVisual\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.pdb
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\bin\Debug\GUIPrototypeWinForm.exe.config
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\bin\Debug\GUIPrototypeWinForm.exe
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\bin\Debug\GUIPrototypeWinForm.pdb
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.csproj.AssemblyReference.cache
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.Form1.resources
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.MessageBox.resources
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.Properties.Resources.resources
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.csproj.GenerateResource.cache
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.csproj.CoreCompileInputs.cache
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.exe
+C:\Users\flobo\Desktop\Projects\SortingAlgorithmsGUIVisualizer\GUIPrototypeWinForm\obj\Debug\GUIPrototypeWinForm.pdb

@@ -18,9 +18,10 @@ namespace GUIPrototypeWinForm
         private bool isSorted = false;
         Brush whiteBrush = new SolidBrush(Color.White);
         Brush blackBrush = new SolidBrush(Color.Black);
-        Brush pivotBrush = new SolidBrush(Color.DarkViolet);
-        Brush indexBrush = new SolidBrush(Color.DarkRed);
+        Brush pivotBrush = new SolidBrush(Color.Red);
+        Brush indexBrush = new SolidBrush(Color.DarkViolet);
         Brush pointerBrush = new SolidBrush(Color.DodgerBlue);
+        int threadSleepTime = 300;
 
         public void Sort(int[] arr, Graphics g_, int maxVal_, int brushWidth_, int[] posArr_)
         {
@@ -82,7 +83,7 @@ namespace GUIPrototypeWinForm
                     g.FillRectangle(blackBrush, posArr[pivotIndex], 0, brushWidth, maxVal);
                     g.FillRectangle(pivotBrush, posArr[pivotIndex], maxVal - arr[pivotIndex], brushWidth, maxVal);
                 }
-                Thread.Sleep(100);
+                Thread.Sleep(threadSleepTime);
                 g.FillRectangle(blackBrush, posArr[i], 0, brushWidth, maxVal);
                 g.FillRectangle(whiteBrush, posArr[i], maxVal - arr[i], brushWidth, maxVal);
             }

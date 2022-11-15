@@ -22,7 +22,7 @@ namespace GUIPrototypeWinForm
         Brush blackBrush = new SolidBrush(Color.Black);
         Brush blueBrush = new SolidBrush(Color.DodgerBlue);
         Brush redBrush = new SolidBrush(Color.Red);
-        int threadSleepTime = 100;
+        int threadSleepTime = 300;
 
         public void Sort(int[] arr, Graphics g_, int maxVal_, int brushWidth_, int[] posArr_)
         {
@@ -87,10 +87,19 @@ namespace GUIPrototypeWinForm
                 }
                 
                 g.FillRectangle(blackBrush, posArr[k], 0, brushWidth, maxVal);
-                g.FillRectangle(whiteBrush, posArr[k], maxVal - arr[k], brushWidth, maxVal);
+                g.FillRectangle(blueBrush, posArr[k], maxVal - arr[k], brushWidth, maxVal);
                 k++;
                 g.FillRectangle(blackBrush, posArr[k], 0, brushWidth, maxVal);
-                g.FillRectangle(whiteBrush, posArr[k], maxVal - arr[k], brushWidth, maxVal);
+                g.FillRectangle(redBrush, posArr[k], maxVal - arr[k], brushWidth, maxVal);
+                for(int a = 0; a < arr.Length; a++)
+                {
+                    if(a != k && a != (k-1))
+                    {
+                        g.FillRectangle(blackBrush, posArr[a], 0, brushWidth, maxVal);
+                        g.FillRectangle(whiteBrush, posArr[a], maxVal - arr[a], brushWidth, maxVal);
+                    }
+                }
+
                 Thread.Sleep(threadSleepTime);
             }
 
@@ -118,6 +127,12 @@ namespace GUIPrototypeWinForm
                 Thread.Sleep(threadSleepTime);
             }
             
+             for(int pos = 0; pos < arr.Length; pos++)
+            {
+                g.FillRectangle(blackBrush, posArr[pos], 0, brushWidth, maxVal);
+                g.FillRectangle(whiteBrush, posArr[pos], maxVal - arr[pos], brushWidth, maxVal);
+            }
+
             return arr;
         }
     }

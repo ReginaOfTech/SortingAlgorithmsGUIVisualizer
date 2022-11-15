@@ -20,6 +20,7 @@ namespace GUIPrototypeWinForm
         Brush purpleBrush = new SolidBrush(Color.DarkViolet);
         int brushWidth;
         private int[] posArr;
+        int threadSleepTime = 300;
 
         public void Sort(int[] arr, Graphics g_, int maxVal_, int brushWidth_, int[] posArr_)
         {
@@ -31,7 +32,7 @@ namespace GUIPrototypeWinForm
             posArr = posArr_;
 
             //loop that performs bubble sort
-            while(!isSorted)
+            while(!IsSorted())
             {
                 for (int i = 0; i < arrToSort.Length; i++)
                 {
@@ -54,22 +55,16 @@ namespace GUIPrototypeWinForm
                             g.FillRectangle(purpleBrush, posArr[i], maxVal - arrToSort[i], brushWidth, maxVal);
 
                         }
-                        else
-                        {
-                            //resets the color so that as it iterates through purple
-                            //columns are not let behind
-                            //g.FillRectangle(blackBrush, posArr[i], 0, brushWidth, maxVal);
-                            //g.FillRectangle(whiteBrush, posArr[i], maxVal - arrToSort[i], brushWidth, maxVal);
-                        }
-                        //Thread sleeps for .01 of a second
+
+                        //Thread sleeps for .03 of a second
                         //Slows it down enough to watch but not bore
-                        Thread.Sleep(100);
-                        g.FillRectangle(blackBrush, posArr[i], 0, brushWidth, maxVal);
-                        g.FillRectangle(whiteBrush, posArr[i], maxVal - arrToSort[i], brushWidth, maxVal);
-                        //check to see if the array is sorted
-                        
+                        Thread.Sleep(threadSleepTime);
+                
+                        //check to see if the array is sorted                       
                     }
-                }isSorted = IsSorted();           
+                    g.FillRectangle(blackBrush, posArr[i], 0, brushWidth, maxVal);
+                    g.FillRectangle(whiteBrush, posArr[i], maxVal - arrToSort[i], brushWidth, maxVal);
+                }          
             }
         }
 
@@ -104,7 +99,6 @@ namespace GUIPrototypeWinForm
                     return false;
                 }
             }
-            Console.WriteLine("Sorted");
             return true;
         }
     }
